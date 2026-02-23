@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest  #windiws-latest #macos-latest
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSource: 'spec'
+      versionSpec: '22.x'
+  - script: npm ci
+    displayName: 'Install playwright Dependencies'
+
+  - script: npx playwright install --with-dependencies
+    displayName: 'install playwright browsers'
+
+  - script: SECRET_KEY=wishinfinite npm run test_stag
+    displayName: 'run tests'
