@@ -1,5 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv'
+import { access } from 'node:fs';
 import path from 'node:path';
 
 
@@ -40,7 +41,7 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
-
+   
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
@@ -49,15 +50,26 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    // {
+    //   name:'Setup',
+    //   testMatch:'global.setup.ts'
+    // },
     {
-      name:'Setup',
-      testMatch:'global.setup.ts'
+      name:'apiTest',
+      testDir:'./tests/api-tests',
+      use:{
+           baseURL:process.env.API_BASE_URL,
+           extraHTTPHeaders:
+           {
+            'Content-Type':'application/json',
+            Accept:'application/json',
+            //Authentication:"Basic YWRtaW46cGFzc3dvcmQxMjM=" //not recommandded to provide here 
+           },
+          }
     },
-
-
     {
       name: 'chromium',
-      dependencies:['Setup'],
+      //dependencies:['Setup'],
       use: { ...devices['Desktop Chrome'],
         storageState:'./playwright/.auth/auth.json'
        },
@@ -65,7 +77,7 @@ export default defineConfig({
 
     {
       name: 'firefox',
-      dependencies:['Setup'],
+      //dependencies:['Setup'],
       use: { ...devices['Desktop Firefox'],
         storageState:'./playwright/.auth/auth.json'
        },

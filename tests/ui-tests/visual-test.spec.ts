@@ -1,4 +1,4 @@
-import {expect, test} from '../fixtures/hooks-fixture'
+import {expect, test} from '../../fixtures/hooks-fixture'
 
 test.use({
     storageState:{

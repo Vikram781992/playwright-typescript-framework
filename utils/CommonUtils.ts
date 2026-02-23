@@ -7,7 +7,7 @@ private secretKey:string;
 constructor()
 {
     if(process.env.SECRET_KEY){
-        this.secretKey = process.env.SECRTE_KEY ? process.env.SECRTE_KEY : "";
+        this.secretKey = process.env.SECRET_KEY ? process.env.SECRET_KEY : "";
     }
     else{
         throw new Error("please provide secretkey for starting execution")

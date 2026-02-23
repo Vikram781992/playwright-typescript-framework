@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test';
 //import {test} from '../fixtures/common-fixture';
 
-import {test } from '../fixtures/hooks-fixture'
+import {test } from '../../fixtures/hooks-fixture'
 // test.beforeEach('Before each hook', async({loginPage}) =>{
 //      await loginPage.navigateToPage()
 // })

@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import {test} from '../fixtures/common-fixture';
+import {test} from '../../fixtures/hooks-fixture';
 
 test('global setup', async({page,loginPage,commonUtils,dashboardPage}) => {
 
@@ -14,7 +14,6 @@ test('global setup', async({page,loginPage,commonUtils,dashboardPage}) => {
     await page.context().storageState({
         path:'./playwright/.auth/auth.json'
     })
-
 })
 
 

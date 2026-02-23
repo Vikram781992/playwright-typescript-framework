@@ -1,5 +1,5 @@
-import {expect, test} from '../fixtures/hooks-fixture'
-import empl from '../data/add-employee-data.json'
+import {expect, test} from '../../fixtures/hooks-fixture'
+import empl from '../../data/add-employee-data.json'
 
 test('create employee',{
     tag:['@ui','@UAT'],

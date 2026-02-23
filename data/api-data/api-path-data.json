@@ -1,0 +1,32 @@
+{
+    "booking_path":"booking",
+    "apiTokenPath":"auth",
+    "booking_id":1,
+    "booking_id2":2,
+    "createbooking": 
+        {
+        "firstname" : "Jim",
+        "lastname" : "Brown",
+        "totalprice" : 111,
+        "depositpaid" : true,
+        "bookingdates" : {
+            "checkin" : "2018-01-01",
+            "checkout" : "2019-01-01"
+        },
+        "additionalneeds" : "Breakfast"
+    },
+    "updatebooking": 
+        {
+        "firstname" : "johny",
+        "lastname" : "youtube",
+        "totalprice" : 500,
+        "depositpaid" : true,
+        "bookingdates" : {
+            "checkin" : "2018-01-01",
+            "checkout" : "2019-01-01"
+        },
+        "additionalneeds" : "Breakfast"
+    }
+
+
+}
