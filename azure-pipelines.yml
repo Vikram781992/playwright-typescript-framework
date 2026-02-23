@@ -17,7 +17,7 @@ steps:
   - script: npm ci
     displayName: 'Install playwright Dependencies'
 
-  - script: npx playwright install --with-dependencies
+  - script: npx playwright install --with-deps
     displayName: 'install playwright browsers'
 
   - script: SECRET_KEY=wishinfinite npm run test_stag
