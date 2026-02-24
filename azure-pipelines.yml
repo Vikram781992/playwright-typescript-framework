@@ -3,8 +3,16 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- main
+# trigger:
+# - main
+
+schedules:
+ - cron: "10 21 * * *"           # min, hour, day of month,month, day of week - provide UTC format
+   displayName: "daily auto pipeline run"
+   branches:
+      include:
+        - main
+   always: true
 
 pool:
   vmImage: ubuntu-latest  #windiws-latest #macos-latest
