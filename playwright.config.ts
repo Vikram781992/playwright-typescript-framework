@@ -50,10 +50,10 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    // {
-    //   name:'Setup',
-    //   testMatch:'global.setup.ts'
-    // },
+    {
+      name:'Setup',
+      testMatch:'global.setup.ts'
+    },
     {
       name:'apiTest',
       testDir:'./tests/api-tests',
@@ -69,7 +69,7 @@ export default defineConfig({
     },
     {
       name: 'chromium',
-      //dependencies:['Setup'],
+      dependencies:['Setup'],
       use: { ...devices['Desktop Chrome'],
         storageState:'./playwright/.auth/auth.json'
        },
@@ -77,7 +77,7 @@ export default defineConfig({
 
     {
       name: 'firefox',
-      //dependencies:['Setup'],
+      dependencies:['Setup'],
       use: { ...devices['Desktop Firefox'],
         storageState:'./playwright/.auth/auth.json'
        },

@@ -23,7 +23,7 @@ public encryptData(data:string)
 
 public decryptData(encData:string)
 {
-    const decryptData = cryptoJs.AES.decrypt(encData,this.secretKey).toString(cryptoJs.enc.Utf8);
+    const decryptData = cryptoJs.AES.decrypt(encData,this.secretKey).toString();
     return decryptData;
 }
 }
