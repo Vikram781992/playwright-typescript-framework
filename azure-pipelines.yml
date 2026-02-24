@@ -19,7 +19,6 @@ parameters:
       - test_stag
       - test_stag_cr_hl
        
-
 steps:
   - task: NodeTool@0
     inputs:
@@ -38,7 +37,7 @@ steps:
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: 'playwright-report'
-      artifact: 'HTML Report'
+      artifact: 'playwright-report'
       publishLocation: 'pipeline'
     condition: always()
 
