@@ -9,6 +9,17 @@ trigger:
 pool:
   vmImage: ubuntu-latest  #windiws-latest #macos-latest
 
+parameters:
+  - name: SCRIPT_KEY_VAL2
+    displayName: 'Select Script Kay'
+    type: string
+    default: 'test_stag_ui_cr_hl_api_novisual'
+    values:
+      - test_stag_ui_cr_hl_api_novisual
+      - test_stag
+      - test_stag_cr_hl
+       
+
 steps:
   - task: NodeTool@0
     inputs:
@@ -20,5 +31,6 @@ steps:
   - script: npx playwright install --with-deps
     displayName: 'install playwright browsers'
 
-  - script: SECRET_KEY=$(SECRET_KEY_VAL) npm run $(SCRIPT_KEY_VAL)
+  #- script: SECRET_KEY=$(SECRET_KEY_VAL) npm run $(SCRIPT_KEY_VAL)  --this comes from variables 
+  - script: SECRET_KEY=$(SECRET_KEY_VAL) npm run $(SCRIPT_KEY_VAL2)  #this comers from above variables set
     displayName: 'run tests'
