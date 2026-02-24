@@ -15,8 +15,8 @@
     "test_uat_cr_hd_vi":"cross-env ENV_NAME=stag npx playwright test --project=chromium --grep=@visual",
     "test_uat_cr_hd_rerun": "cross-env ENV_NAME=uat npx playwright test --project=chromium --last-failed",
     "test_stag_api":"cross-env ENV_NAME=stag npx playwright test --project=apiTest",
-    "test_stag_ui_cr_hd_api":"cross-env ENV_NAME=stag npx playwright test --project=chromium --headed --project=apiTest"
-
+    "test_stag_ui_cr_hd_api":"cross-env ENV_NAME=stag npx playwright test --project=chromium --headed --project=apiTest",
+    "test_stag_ui_cr_hl_api_novisual":"cross-env ENV_NAME=stag npx playwright test --project=chromium --grep-invert=@visual --project=apiTests"
   },
   "keywords": [],
   "author": "",
