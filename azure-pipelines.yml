@@ -7,7 +7,7 @@
 # - main
 
 schedules:
- - cron: "10 21 * * *"           # min, hour, day of month,month, day of week - provide UTC format
+ - cron: "10 21 * * *"           # min, hour, day of month,month, day of week - timings should be in provide UTC format 
    displayName: "daily auto pipeline run"
    branches:
       include:
