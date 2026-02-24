@@ -34,3 +34,17 @@ steps:
   #- script: SECRET_KEY=$(SECRET_KEY_VAL) npm run $(SCRIPT_KEY_VAL)  --this comes from variables 
   - script: SECRET_KEY=$(SECRET_KEY_VAL) npm run $(SCRIPT_KEY_VAL2)  #this comers from above variables set
     displayName: 'run tests'
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: 'playwright-report'
+      artifact: 'HTML Report'
+      publishLocation: 'pipeline'
+    condition: always()
+
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**test-results/junit-report.xml'
+      testRunTitle: 'playwright junit report'
+    condition: always()
