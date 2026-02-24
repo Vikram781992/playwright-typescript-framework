@@ -20,5 +20,5 @@ steps:
   - script: npx playwright install --with-deps
     displayName: 'install playwright browsers'
 
-  - script: SECRET_KEY=wishinfinite npm run test_stag
+  - script: SECRET_KEY=$(SECRET_KEY_VAL) npm run test_stag
     displayName: 'run tests'
