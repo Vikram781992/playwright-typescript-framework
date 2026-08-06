@@ -13,13 +13,13 @@ export default class commonApiUtils{
     async getToken()
     {
         const commonutils = new CommonUtils();
-        const username = commonutils.decryptData(process.env.API_USERNAME!)
-        const password = commonutils.decryptData(process.env.API_PASSWORD!)
+        // const username = commonutils.decryptData(process.env.API_USERNAME!)
+        // const password = commonutils.decryptData(process.env.API_PASSWORD!)
 
         const responseToken = await this.request.post(apipathdata.apiTokenPath,{
             data:{
-                "username":username,
-                "password":password
+                // "username":username,
+                // "password":password
             }
         })
         return await responseToken.json();

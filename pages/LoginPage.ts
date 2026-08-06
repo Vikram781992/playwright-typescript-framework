@@ -7,6 +7,7 @@ export class LoginPage{
     readonly passwordInput:Locator;
     readonly submitButton:Locator; 
     readonly invalidCredentialsErrorPopup:Locator;
+    
     constructor(page:Page)
     {
         this.page = page;

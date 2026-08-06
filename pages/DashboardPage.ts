@@ -10,7 +10,4 @@ export class DashboardPage{
         this.page = page;
         this.dashboardText = page.getByRole('heading',{name:'Dashboard'})
     }
-
-
-
 }
