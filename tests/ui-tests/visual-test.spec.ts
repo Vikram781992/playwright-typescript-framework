@@ -15,6 +15,4 @@ test('visual testing',{tag:'@visual',annotation:{type:'',description:''}},async(
     await loginPage.loginToPage(username,password);
     await expect(leftNavigationPage.orangeHRMLogo).toHaveScreenshot('orangehtmlogo.png')
 
-
-
 })
